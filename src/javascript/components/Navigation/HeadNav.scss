@@ -1,0 +1,37 @@
+.m-HeadNav {
+  .ant-menu.ant-menu-horizontal.ant-menu-light.ant-menu-root {
+    line-height: 60px;
+  }
+  .ant-menu-horizontal {
+    & > .ant-menu-item {
+      font-weight: bold;
+      &:hover {
+        border-bottom: 3px solid #cfcaf6;
+      }
+      a {
+        color: #b3acf2;
+        &:hover {
+          color: #cfcaf6;
+        } 
+      }
+      &.ant-menu-item-selected {
+        border-bottom: 3px solid #b3acf2;
+        a {
+          color: #b3acf2;
+        }
+      }
+    }
+  }
+
+  .m-HeadNav-buckets {
+    position: absolute;
+    top: 0;
+    right: 30px;
+    font-size: 16px;
+    color: #cfcaf6;
+    i.anticon {
+      margin: 0 7px;
+      cursor: not-allowed;
+    }
+  } 
+}
