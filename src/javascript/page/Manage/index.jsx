@@ -10,14 +10,22 @@ const routes = [
   { path: '/Manage/List', component: List },
 ];
 
+const click = () => {
+  const a = { b:1 };
+  Object.keys(a).map(item => a[item].map(bItem => console.log(bItem)));
+};
+
 const PageComponent = (props) =>
-  (<Navigation>
-    {routes.map((route, i) => (
-      <Route key={i} path={route.path} render={renderProps => (
-        <route.component {...renderProps} />
-      )} />
-    ))}
-  </Navigation>);
+  (<div>
+    <div className="click" onClick={click}>click here</div>
+    <Navigation>
+      {routes.map((route, i) => (
+        <Route key={i} path={route.path} render={renderProps => (
+          <route.component {...renderProps} />
+        )} />
+      ))}
+    </Navigation>
+  </div>);
 
 // PageComponent.propTypes = {
 //   history: PropTypes.object.isRequired,

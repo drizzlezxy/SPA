@@ -18,10 +18,18 @@ class PageComponent extends Component {
     };
   }
 
+  onClick () {
+    const a = { b:1 };
+    Object.keys(a).map(item => a[item].map(bItem => console.log(bItem)));
+  }
+
   render () {
     return (
       <div className="m-objects">
-        {''.split([])}
+        <div className="click" onClick={this.onClick} style={{
+          height: '200px',
+          width: '200px',
+        }}>click here</div>
       </div>
     );
   }

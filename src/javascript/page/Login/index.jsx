@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router';
 import { Form, Icon, Input, Button, message } from 'antd';
 import './index.scss';
 import RequestUtil from 'extend/common/RequestUtil';
-import CookieUtil from 'extend/common/CookieUtil';
+// import CookieUtil from 'extend/common/CookieUtil';
 import { encode } from 'extend/common/pwdUtil';
 
 const FormItem = Form.Item;
@@ -34,6 +33,9 @@ class NormalLoginForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    console.log('submit');
+    const a = { b:1 };
+    Object.keys(a).map(item => a[item].map(bItem => console.log(bItem)));
     this.props.form.validateFields((err, values) => {
       if (!err) {
         return RequestUtil.fetch(
@@ -98,5 +100,5 @@ NormalLoginForm.propTypes = {
   form: PropTypes.object.isRequired,
 };
 
-const WrappedNormalLoginForm = Form.create()(NormalLoginForm);
+const PageComponent = Form.create()(NormalLoginForm);
 export default PageComponent;

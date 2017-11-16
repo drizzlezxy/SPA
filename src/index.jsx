@@ -8,6 +8,12 @@ import Login from 'page/Login/route';
 import Manage from 'page/Manage';
 import NoMatch from 'page/NoMatch';
 
+import Raven from 'raven-js';
+Raven.config(
+  'https://81501ae3a08f49b0b70d337f98cd4e8a@sentry.io/241579',
+  { release: 'V1.0.0' },
+).install();
+
 const routes = [
   { path: '/Login', component: Login },
   { path: '/Manage', component: Manage },

@@ -27,7 +27,8 @@ var webpackConfig = {
   output: {
     path: filePath.build,
     filename: '[name].[hash].js',
-    chunkFilename: 'bundle.[name].[chunkhash].js',
+    chunkFilename: '[name].[chunkhash].js',
+    sourceMapFilename: '[name].[chunkhash].map',
     publicPath: '/'
   },
   resolve: {
@@ -147,7 +148,8 @@ if (__LOCAL__) {
 } else {
   webpackConfig.entry.vendor = ['react', 'react-dom', 'jquery', 'babel-polyfill'];
 
-  webpackConfig.devtool = false;
+  // webpackConfig.devtool = false;
+  webpackConfig.devtool = 'source-map';   // 映射代码到其原始位置
   webpackConfig.cache = false;
 
   webpackConfig.module.rules.push(
@@ -248,7 +250,7 @@ if (__LOCAL__) {
     new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       parallel: true,     // 多进程压缩, 加速
-      sourceMap: false,
+      sourceMap: true,
       uglifyOptions: {
         mangle: {
           reserved: ['$super', '$', 'exports', 'require']     // 不丑化
