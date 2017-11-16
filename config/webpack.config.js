@@ -86,7 +86,7 @@ if (__LOCAL__) {
       test: /.jsx?$/,
       use: [
         {
-          loader: 'react-hot-loader',
+          loader: 'react-hot-loader/webpack',
         }, {
           loader: 'babel-loader',
           options: {
