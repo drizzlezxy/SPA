@@ -34,8 +34,9 @@ class NormalLoginForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     console.log('submit');
-    const a = { b:1 };
-    Object.keys(a).map(item => a[item].map(bItem => console.log(bItem)));
+    this.props.history.push({
+      pathname: '/Test',
+    });
     this.props.form.validateFields((err, values) => {
       if (!err) {
         return RequestUtil.fetch(

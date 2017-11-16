@@ -21,11 +21,14 @@ class Bundle extends Component {
     this.setState({
       mod: null,
     });
-    props.load((mod) => {
+    props.load().then((mod) => {
       this.setState({
         // handle both es imports and cjs
         mod: mod.default ? mod.default : mod,
       });
+    }).catch(error => {
+      console.log('error:', error);
+      return 'An error occurred while loading the component';
     });
   }
 

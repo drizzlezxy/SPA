@@ -1,12 +1,12 @@
 import React from 'react';
 import Bundle from 'components/Bundle/Bundle';
-const loadPage = () => import(/* webpackChunkName: "Login" */ './index.jsx');
+const loadPage = () => import(/* webpackChunkName: "Echart" */ './index.jsx');
 
 // components load their module for initial visit
-const PageComp = (props) => (
+const List = (props) => (
   <Bundle load={loadPage}>
     {(Page) => <Page {...props} />}
   </Bundle>
 );
 
-export default PageComp;
+export default List;

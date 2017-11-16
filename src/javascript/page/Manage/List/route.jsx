@@ -1,6 +1,6 @@
 import React from 'react';
 import Bundle from 'components/Bundle/Bundle';
-import loadPage from 'bundle-loader?lazy&name=List!./index'; //eslint-disable-line
+const loadPage = () => import(/* webpackChunkName: "List" */ './index.jsx');
 
 // components load their module for initial visit
 const List = (props) => (

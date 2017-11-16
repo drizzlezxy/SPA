@@ -29,7 +29,7 @@ var webpackConfig = {
     filename: '[name].[hash].js',
     chunkFilename: '[name].[chunkhash].js',
     sourceMapFilename: '[name].[chunkhash].map',
-    publicPath: '/'
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx'], // 文件扩展名自动填充为 js 或 jsx

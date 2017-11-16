@@ -1,6 +1,6 @@
 import React from 'react';
 import Bundle from 'components/Bundle/Bundle';
-const loadPage = () => import(/* webpackChunkName: "Login" */ './index.jsx');
+const loadPage = () => import(/* webpackChunkName: "Test" */ './index.jsx');
 
 // components load their module for initial visit
 const PageComp = (props) => (
