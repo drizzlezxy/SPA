@@ -4,27 +4,28 @@ import 'scss/base.scss';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Login from 'page/Login';
-import Test from 'page/Test/route.jsx';
-import Manage from 'page/Manage';
-import NoMatch from 'page/NoMatch';
+// import Login from 'page/Login';
+// import Test from 'page/Test/route.jsx';
+// import Manage from 'page/Manage';
+// import NoMatch from 'page/NoMatch';
 
-// import Raven from 'raven-js';
-// Raven.config(
-//   'https://81501ae3a08f49b0b70d337f98cd4e8a@sentry.io/241579',
-//   { release: 'V1.0.0' },
-// ).install();
+// const routes = [
+//   { path: '/Login', component: Login },
+//   { path: '/Test', component: Test },
+//   { path: '/Manage', component: Manage },
+// ];
+import Tabs from 'page/Tabs';
+import Cache from 'page/Cache';
 
 const routes = [
-  { path: '/Login', component: Login },
-  { path: '/Test', component: Test },
-  { path: '/Manage', component: Manage },
+  { path: '/Tabs', component: Tabs },
+  { path: '/Cache', component: Cache },
 ];
 
 const BasicRouter = () => (
   <Router>
     <Switch>
-      <Route exact path="/" component={Login} />
+      <Route exact path="/" component={Tabs} />
 
       {routes.map((route, i) => (
         <Route key={i} path={route.path} render={props => (
@@ -32,7 +33,7 @@ const BasicRouter = () => (
         )} />
       ))}
 
-      <Route component={NoMatch} />
+      <Route component={Tabs} />
     </Switch>
   </Router>
 );
