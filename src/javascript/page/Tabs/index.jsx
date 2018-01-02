@@ -31,9 +31,15 @@ class PageComponent extends Component {
       console.log(`fetch ${type} 数据`);
       fetchData(type).then((data) => {
         cache.set(type, data);
-        this.setState({ [type]: data });
+        this && this.setState({ [type]: data });
       });
     }
+  }
+
+  resetData = (type) => {
+    fetchData(type).then((data) => {
+      this.setState({ [type]: data });
+    });
   }
 
   onTabChange = (tabIndex) => {
