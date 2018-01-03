@@ -16,10 +16,12 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // ];
 import Tabs from 'page/Tabs';
 import Cache from 'page/Cache';
+import Form from 'page/Form';
 
 const routes = [
   { path: '/Tabs', component: Tabs },
   { path: '/Cache', component: Cache },
+  { path: '/Form', component: Form },
 ];
 
 const BasicRouter = () => (
