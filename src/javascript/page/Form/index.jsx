@@ -57,6 +57,11 @@ class PageComponent extends Component {
     });
   }
 
+  /**
+   * validate 运用 策略模式 校验数据
+   * @param  {[type]} values [description]
+   * @return {[type]}        [description]
+   */
   validate = (values) => {
     const { itemList } = this.state;
 
@@ -72,6 +77,11 @@ class PageComponent extends Component {
     return validator.doValidate();
   }
 
+  /**
+   * validate if-else 校验数据
+   * @param  {[type]} values [description]
+   * @return {[type]}        [description]
+   */
   validate = (values) => {
     const { username, telephone, verifyCode } = values;
     const infos = {};

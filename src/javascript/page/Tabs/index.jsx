@@ -18,6 +18,11 @@ class PageComponent extends Component {
     this.resetData('list');
   }
 
+  /**
+   * resetData 先尝试从缓存中获取数据，若没有fetch数据
+   * @param  {[type]} type [description]
+   * @return {[type]}      [description]
+   */
   resetData = (type) => {
     const cache = createSingleCache();
     const dataInCache = cache.get(type);
@@ -36,6 +41,11 @@ class PageComponent extends Component {
     }
   }
 
+  /**
+   * resetData 直接fetch数据
+   * @param  {[type]} type [description]
+   * @return {[type]}      [description]
+   */
   resetData = (type) => {
     fetchData(type).then((data) => {
       this.setState({ [type]: data });
